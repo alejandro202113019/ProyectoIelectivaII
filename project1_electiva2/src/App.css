@@ -1,38 +1,139 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.main-content {
+  flex-grow: 1;
+  padding-top: 56px; /* Height of the fixed header */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.form-login {
+  max-width: 400px;
+  margin: 10vh auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.btn-custom {
+  background-color: #007bff;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-custom:hover {
+  background-color: #0056b3;
+  color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.product-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.product-list li {
+  background-color: white;
+  padding: 15px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .product-list li {
+    flex-direction: column;
+    align-items: flex-start;
   }
-  to {
-    transform: rotate(360deg);
+
+  .product-list li div:last-child {
+    margin-top: 10px;
+  }
+}
+/* Add these styles to your existing App.css */
+
+.form-container {
+  max-width: 500px;
+  margin: 10vh auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group input {
+  width: 100%;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.categories-container {
+  margin-top: 30px;
+}
+
+.categories-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.categories-list li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.categories-list li button {
+  margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+  .form-container {
+    padding: 15px;
+  }
+  
+  .btn-container {
+    flex-direction: column;
+  }
+  
+  .btn-container button {
+    margin-bottom: 10px;
+  }
+  
+  .categories-list li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .categories-list li button {
+    margin-left: 0;
+    margin-top: 10px;
   }
 }

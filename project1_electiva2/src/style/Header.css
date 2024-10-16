@@ -1,48 +1,58 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #343a40;
+  padding: 10px 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: white !important;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255,255,255,.5) !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: rgba(255,255,255,.75) !important;
+}
+
+.navbar-toggler {
+  border-color: rgba(255,255,255,.1);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    width: 75%;
+    height: 100%;
+    background-color: #343a40;
   }
-  
-  .logo span {
-    font-weight: bold;
+
+  .navbar-collapse.collapsing {
+    left: -75%;
+    transition: height 0s ease;
   }
-  
-  .nav {
-    display: flex;
-    list-style: none;
-    gap: 1rem;
+
+  .navbar-collapse.show {
+    left: 0;
+    transition: left 300ms ease-in-out;
   }
-  
-  .nav li a {
-    text-decoration: none;
-    color: inherit;
+
+  .navbar-toggler.collapsed ~ .navbar-collapse {
+    transition: left 300ms ease-in-out;
   }
-  
-  .buttons {
-    display: flex;
-    align-items: center;
-  }
-  
-  button {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .sign-in {
-    margin-right: 0.5rem;
-    background-color: white;
-    border: 1px solid blue;
-    color: blue;
-  }
-  
-  .register {
-    background-color: blue;
-    color: white;
-  }
-  
+}
