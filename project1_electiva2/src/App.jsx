@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Productos from './components/Productos';
 import AgregarProducto from './components/AgregarProducto';
 import ActualizarProducto from './components/ActualizarProducto';
+import Categorias from './components/Categorias'; // Importa el nuevo componente
 import './App.css';
 
 function App() {
@@ -39,6 +40,10 @@ function App() {
               <Route
                 path="/productos/actualizar/:id"
                 element={isAuthenticated ? <ActualizarProducto token={token} /> : <Navigate to="/" />}
+              />
+              <Route
+                path="/categorias"
+                element={isAuthenticated ? <Categorias token={token} /> : <Navigate to="/" />}
               />
             </Routes>
           </div>

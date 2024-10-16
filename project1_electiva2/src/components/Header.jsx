@@ -21,6 +21,9 @@ const Header = ({ isAuthenticated }) => {
                   <li className="nav-item">
                     <Link className="nav-link" to="/productos/agregar">Agregar Producto</Link>
                   </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/categorias">Categorías</Link>
+                  </li>
                 </>
               ) : (
                 <>
