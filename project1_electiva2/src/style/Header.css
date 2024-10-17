@@ -55,4 +55,7 @@
   .navbar-toggler.collapsed ~ .navbar-collapse {
     transition: left 300ms ease-in-out;
   }
+  .nav-item {
+    margin: 0 10px; /* Espaciado entre elementos */
+}
 }

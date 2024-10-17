@@ -5,17 +5,26 @@ import Login from './components/Login';
 import Productos from './components/Productos';
 import AgregarProducto from './components/AgregarProducto';
 import ActualizarProducto from './components/ActualizarProducto';
-import Categorias from './components/Categorias'; // Importa el nuevo componente
+import Register from './components/Register';
+import Categorias from './components/Categorias'; 
 import './App.css';
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
   const [token, setToken] = React.useState('');
 
+  // Función para cerrar sesión
+  const handleLogout = () => {
+    setIsAuthenticated(false);
+    setToken('');
+    localStorage.removeItem("token"); // Eliminar el token del almacenamiento local
+    window.location.href = '/'; // Redirigir a la página de inicio
+  };
+
   return (
     <Router>
       <div className="App">
-        <Header isAuthenticated={isAuthenticated} />
+        <Header isAuthenticated={isAuthenticated} handleLogout={handleLogout} />
         <div className="main-content">
           <div className="container">
             <Routes>
@@ -28,6 +37,10 @@ function App() {
                     <Login setIsAuthenticated={setIsAuthenticated} setToken={setToken} />
                   )
                 }
+              />
+              <Route 
+                path="/register" 
+                element={<Register setIsAuthenticated={setIsAuthenticated} setToken={setToken} />} 
               />
               <Route
                 path="/productos"
