@@ -95,13 +95,29 @@ const Categorias = ({ token }) => {
 
       <ul className="categories-list">
         {categoriasFiltradas.map(categoria => (
-          <li key={categoria._id}>
+          <li key={categoria.id}>
             <div>
               <strong>{categoria.name}</strong> - {categoria.description}
             </div>
             <div>
-              <button onClick={() => eliminarCategoria(categoria._id)} className="btn btn-danger btn-sm">Eliminar</button>
-              <button onClick={() => actualizarCategoria(categoria._id, { ...categoria, name: categoria.name + ' (Actualizado)' })} className="btn btn-warning btn-sm">
+              <h4>Productos:</h4>
+              <ul>
+                {categoria.products && categoria.products.length > 0 ? (
+                  categoria.products.map((product) => (
+                    <li key={product._id}>
+                      <strong>Nombre:</strong> {product.name} <br />
+                      <strong>Descripción:</strong> {product.description} <br />
+                      <strong>Valor:</strong> {product.value}
+                    </li>
+                  ))
+                ) : (
+                  <li>No hay productos asociados</li>
+                )}
+              </ul>
+            </div>
+            <div>
+              <button onClick={() => eliminarCategoria(categoria.id)} className="btn btn-danger btn-sm">Eliminar</button>
+              <button onClick={() => actualizarCategoria(categoria.id, { ...categoria, name: categoria.name + ' (Actualizado)' })} className="btn btn-warning btn-sm">
                 Actualizar Nombre
               </button>
             </div>
